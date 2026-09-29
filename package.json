@@ -1,0 +1,27 @@
+{
+  "name": "ai",
+  "version": "1.0.0",
+  "description": "Entire journey from generative to Agentic Ai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Ai",
+    "AgenticAi"
+  ],
+  "author": "Touqeer",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^2.24.0",
+    "@langchain/core": "^1.2.13",
+    "@langchain/textsplitters": "^1.0.2",
+    "dotenv": "^18.0.4",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
