@@ -26,7 +26,7 @@ Account deletion: Go to Settings, then Privacy, then Delete account. This cannot
 
 async function chunkText(text: string): Promise<string[]> {
   const splitter = new RecursiveCharacterTextSplitter({
-    chunkSize: 200,
+    chunkSize: 1000,
     chunkOverlap: 0,
   });
   return await splitter.splitText(text);

@@ -37,7 +37,7 @@ async function callGemini() {
     console.log("\n--- Model Response ---");
     // console.log(JSON.stringify(data, null, 2));
     console.log(data?.usage);
-    
+    //
     
 
   } catch (error) {
