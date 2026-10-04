@@ -4,7 +4,11 @@ import { QdrantClient } from "@qdrant/js-client-rest";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 
 const ai = new GoogleGenAI({});
-const client = new QdrantClient({ host: "localhost", port: 6333 });
+export const qdrant_ApiKey=process.env.QDRANT_API_KEY;
+const client = new QdrantClient({
+    url: 'https://d39d15d3-ea22-4603-ac78-624775bec24e.eu-central-1-0.aws.cloud.qdrant.io:6333',
+    apiKey: qdrant_ApiKey
+});
 const COLLECTION = "faq";
 
 const document = `Refunds: You can request a refund within 30 days of purchase. Refunds go back to the original payment method and take 5-7 business days.
@@ -48,3 +52,6 @@ async function main() {
 }
 
 main();
+
+
+
