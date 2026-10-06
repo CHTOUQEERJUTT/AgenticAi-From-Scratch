@@ -3,8 +3,10 @@ import express from "express";
 import Redis from "ioredis";
 import { createHash } from "node:crypto";
 import { answer } from "./rag";
+import {morganMiddleware} from '../src/middleware/logger'
 
 const app = express();
+app.use(morganMiddleware)
 app.use(express.json());
 
 const redis = new Redis(); 

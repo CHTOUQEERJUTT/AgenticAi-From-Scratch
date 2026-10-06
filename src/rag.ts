@@ -10,7 +10,7 @@ const client = new QdrantClient({
 
 const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/interactions";
 
-async function retrieve(question: string): Promise<string[]> {
+export async function retrieve(question: string): Promise<string[]> {
   const res = await ai.models.embedContent({
     model: "gemini-embedding-001",
     contents: question,
@@ -30,15 +30,15 @@ async function generate(question: string, chunks: string[]): Promise<string> {
   const context = chunks.join("\n\n");
 
   const prompt = `
-You answer questions using ONLY the context below.
-If the answer is not in the context, reply exactly: "I don't know based on the provided documents."
+    You answer questions using ONLY the context below.
+    If the answer is not in the context, reply exactly: "I don't know based on the provided documents."
 
-CONTEXT:
-${context}
+    CONTEXT:
+    ${context}
 
-QUESTION:
-${question}
-`;
+    QUESTION:
+    ${question}
+    `;
 
   const response = await fetch(GEMINI_URL, {
     method: "POST",
